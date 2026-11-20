@@ -1,0 +1,21 @@
+name: Experimental npm Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-notes:
+        description: Markdown for the GitHub release
+        type: string
+        required: true
+
+permissions: {}
+
+jobs:
+  release:
+    permissions:
+      contents: write
+      id-token: write
+    uses: luxass/shared-workflows/.github/workflows/reusable-release-npm-staged.yaml@0474f4846551e506d048c81ca4cc0cee79acefa6 # PR #85
+    with:
+      build: false
+      release-notes: ${{ inputs.release-notes }}

@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       release-notes:
-        description: Markdown for the GitHub release
+        description: Optional intro above the generated release notes
         type: string
-        required: true
+        required: false
 
 permissions: {}
 
@@ -15,7 +15,7 @@ jobs:
     permissions:
       contents: write
       id-token: write
-    uses: luxass/shared-workflows/.github/workflows/reusable-release-npm-staged.yaml@0474f4846551e506d048c81ca4cc0cee79acefa6 # PR #85
+    uses: luxass/shared-workflows/.github/workflows/reusable-release-npm-staged.yaml@87b02ff37aad68b25add9013c48a5cc43f58aa24 # PR #85
     with:
       build: false
       release-notes: ${{ inputs.release-notes }}

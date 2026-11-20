@@ -9,6 +9,6 @@ The [release workflow](.github/workflows/release.yaml) calls the experimental wo
 1. Publish the baseline version (`0.0.1`) manually with `npm publish --access public`.
 2. In GitHub, create the `npm-registry` and `release-approval` environments. Restrict both to the default branch and require a reviewer. If you test alone, do not enable prevention of self-review.
 3. In npm, configure a [stage-only trusted publisher](https://docs.npmjs.com/trusted-publishers/) for `luxass/npm-staged-release-sandbox`. Use `release.yaml` as the workflow filename and `npm-registry` as the environment.
-4. Bump `package.json` to `0.0.2` and push the commit to `main`. Dispatch **Experimental npm Release** from `main` with test release notes.
+4. Bump `package.json` to `0.0.2` and push the commit to `main`. Dispatch **Experimental npm Release** from `main`. Leave the notes input blank to test automatic release notes, or enter an optional intro.
 5. Approve the `npm-registry` job. Once staging finishes, make sure that npm lists the staged version but does not serve it. The `v0.0.2` tag and GitHub release must not exist yet.
 6. Approve the version on npm with 2FA. Then approve `release-approval` on GitHub. Make sure that npm serves the version, the tag points to the dispatched commit, and the GitHub release shows the notes you entered.

@@ -1,5 +1,11 @@
 # @luxass/npm-staged-release-sandbox
 
+## 0.0.10
+
+### Patch Changes
+
+- Release after the dependency to test partial approval and rerunning failed jobs.
+
 ## 0.0.9
 
 ### Patch Changes

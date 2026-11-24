@@ -1,0 +1,19 @@
+{
+  "name": "@luxass/npm-staged-release-sandbox",
+  "version": "0.0.7",
+  "description": "Experimental fixture for testing npm staged publishing. Not for production use.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./index.js",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luxass/npm-staged-release-sandbox.git",
+    "directory": "packages/sandbox"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

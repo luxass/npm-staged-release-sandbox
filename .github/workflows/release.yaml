@@ -7,10 +7,6 @@ on:
         description: Optional exact commit SHA for automated dispatches
         type: string
         required: false
-      release-notes:
-        description: Optional intro above the generated release notes
-        type: string
-        required: false
 
 permissions: {}
 
@@ -23,8 +19,6 @@ jobs:
     permissions:
       contents: write
       id-token: write
-    uses: luxass/shared-workflows/.github/workflows/reusable-release-npm-staged.yaml@d6e927ea9afc6b93907d2b9214c002ab03745fcf # luxass/shared-workflows#92
+    uses: luxass/shared-workflows/.github/workflows/reusable-release-npm-staged-workspace.yaml@d6e927ea9afc6b93907d2b9214c002ab03745fcf # luxass/shared-workflows#92
     with:
-      build: false
       expected-sha: ${{ inputs.expected-sha }}
-      release-notes: ${{ inputs.release-notes }}

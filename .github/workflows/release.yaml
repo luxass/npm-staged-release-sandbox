@@ -1,6 +1,10 @@
 name: Experimental npm Release
 
 on:
+  # Like a Changesets caller, a push to main releases every version that npm does not serve.
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       expected-sha:

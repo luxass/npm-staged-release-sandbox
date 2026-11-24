@@ -109,4 +109,10 @@ importers:
 
   .: {}
 
-  packages/sandbox: {}
+  packages/sandbox:
+    dependencies:
+      '@luxass/npm-staged-release-sandbox-dependency':
+        specifier: workspace:^
+        version: link:../sandbox-dependency
+
+  packages/sandbox-dependency: {}
